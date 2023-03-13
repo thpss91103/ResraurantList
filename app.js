@@ -1,9 +1,16 @@
 const express = require('express')
+const exphbs = require('express-handlebars')
+const resturant = require("./resturant.json")
 const app = express()
 const port = 3000
 
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+app.use(express.static('public'))
+
+
 app.get('/', (req, res) => {
-  res.send('Complete')
+  res.render('index', { resturant: resturant.results})
 })
 
 app.listen(port, () => {
