@@ -10,20 +10,24 @@ app.use(express.static('public'))
 
 
 app.get('/', (req, res) => {
-  res.render('index', { restaurant: restaurantList.results})
+  res.render('index', { restaurants: restaurantList.results })
 })
 
 app.get('/restaurant/:id', (req, res) => {
-  const restaurant = restaurantList.results.filter(restaurant => restaurant.id == req.params.id)
+  const restaurant = restaurantList.results.filter(restaurant => restaurant.id === Number(req.params.id))
   res.render('show', { restaurant: restaurant[0] })
 })
 
 app.get('/search', (req, res) => {
+  if (!req.query.keywords) {
+    return res.redirect("/")
+  }
+  
   const keyword = req.query.keyword
-  const restaurant = restaurantList.results.filter(restaurant => {
+  const restaurants = restaurantList.results.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
   })
-  res.render('index', { restaurant: restaurant, keyword: keyword})
+  res.render('index', { restaurants: restaurants, keyword: keyword })
 })
 
 app.listen(port, () => {

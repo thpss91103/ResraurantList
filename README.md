@@ -1,10 +1,10 @@
 # 我的餐廳清單
 ### 介紹
-可以瀏覽自己收藏的餐廳、收尋餐廳及餐廳詳細資料
+可以瀏覽自己收藏的餐廳、搜尋餐廳及餐廳詳細資料
 ![Restaurant](https://github.com/thpss91103/ResraurantList/blob/main/public/image/indexImg.png)
 ### 功能
 1. 首頁可以看到自己收藏的餐廳
-2. 收尋欄可以用關鍵字收尋餐廳
+2. 搜尋欄可以用關鍵字搜尋餐廳
 3. 點擊餐廳可以看詳細資料
 4. 點擊地址可以用GoogleMap看到在哪個地方
 ### API Reference
