@@ -1,0 +1,29 @@
+<div class="container search-bar">
+  <div class="search-bar-outer">
+    <div class="search-bar-inner">
+      <h1 class="title">Edit Restaurant</h1>
+    </div>
+  </div>
+</div>
+
+<form action="/restaurants/{{ restaurant._id }}/edit" method="POST">
+  <div class="new-form">
+    <label>Name :</label>
+    <input type="text" placeholder="Name" name="name" value="{{ restaurant.name }}">
+    <label>Adress :</label>
+    <input type="text" placeholder="Location" name="location" value="{{ restaurant.location }}">
+    <label>Phone Number:</label>
+    <input type="text" placeholder="02-XXXXXXX" name="phone" value="{{ restaurant.phone }}">
+    <label>Score Rating :</label>
+    <input type="number" placeholder="4.X" name="rating" max="5" step="0.1" value="{{ restaurant.rating }}">
+    <label>Description :</label>
+    <textarea name="description" id="description" cols="30" rows="10">{{ restaurant.description }}</textarea>
+    <label>Image URL:</label>
+    <input type="text" placeholder="http://..." name="image" value="{{ restaurant.image }}">
+    <label>Food Category :</label>
+    <input type="text" placeholder="Chinese/Japanese..." name="category" value="{{ restaurant.category }}">
+
+  </div>
+  <button type="submit" class="form-button">Save</button>
+  <a href="/">Back</a>
+</form>
