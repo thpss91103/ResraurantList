@@ -148,3 +148,19 @@ form {
   color: rgb(37, 61, 216);
   background-color: #71baea;
 }
+
+.function-btn {
+  float: right;
+}
+
+.function-btn a{
+  padding: 0 10px 0;
+  border-radius: 3px;
+  color: white;
+  background-color: #226089;
+}
+
+.function-btn a:hover {
+  color: rgb(37, 61, 216);
+  background-color: #71baea;
+}
