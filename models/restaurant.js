@@ -9,6 +9,10 @@ const restaurantSchema = new Schema({
     type: String,
     required: true
   },
+  googleMap: {
+    type: String,
+    required: true
+  },
   phone: {
     type: String,
     required: true
