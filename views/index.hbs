@@ -22,7 +22,7 @@
     <div class="col-md-10 col-12 mx-auto">
       <div class="row row-cols-sm-3">
         {{#each restaurants}}
-        <a href="/restaurant/{{this._id}}" class="text-secondary">
+        <div class="text-secondary">
           <div class="card mb-3">
             <img class="card-img-top" src="{{this.image}}"
               alt="{{this.name}}">
@@ -35,10 +35,11 @@
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
               </span>
-              <a href="/restaurant/{{this._id}}">Detail</a>
             </div>
+            <a href="/restaurant/{{this._id}}">Detail</a>
           </div>
-        </a>
+          
+        </div>
         
         {{/each}}
       </div>
