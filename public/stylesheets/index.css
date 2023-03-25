@@ -99,3 +99,33 @@ header {
   }
 
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-button{
+  margin: 20px 0 20px;
+  width: 100px;
+  color: white;
+  background-color: #226089;
+}
+
+.form-button:hover {
+  color: rgb(37, 61, 216);
+  background-color: #71baea;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color:rgba(42, 81, 171, 0.718)
+}
