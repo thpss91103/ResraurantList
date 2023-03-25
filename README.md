@@ -4,9 +4,12 @@
 ![Restaurant](https://github.com/thpss91103/ResraurantList/blob/main/public/image/indexImg.png)
 ### 功能
 1. 首頁可以看到自己收藏的餐廳
-2. 搜尋欄可以用關鍵字搜尋餐廳
-3. 點擊餐廳可以看詳細資料
-4. 點擊地址可以用GoogleMap看到在哪個地方
+2. 右上角Create可以新增想收藏的餐廳
+3. 搜尋欄可以用關鍵字搜尋餐廳
+4. 點擊Detail可以看詳細資料
+5. 點擊Edit可以編輯餐廳資料
+6. 點擊Delete可以刪除餐廳
+7. 點擊地址可以看到地圖
 ### API Reference
 1. restaurant.json
 2. googlemap
@@ -35,3 +38,6 @@ ctrl + c
 - Express-Handlebars 3.0.0
 - Bootstrap 4.0.0
 - Font-awesome 5.8.1
+- MongoDB
+- Mongoose 5.9.7
+- Dotenv 16.0.3
