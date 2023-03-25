@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<form action="/restaurants/{{ restaurant._id }}/edit" method="POST">
+<form action="/restaurant/{{ restaurant._id }}/edit" method="POST">
   <div class="new-form">
     <label>Name :</label>
     <input type="text" placeholder="Name" name="name" value="{{ restaurant.name }}">
@@ -24,6 +24,9 @@
     <input type="text" placeholder="Chinese/Japanese..." name="category" value="{{ restaurant.category }}">
 
   </div>
-  <button type="submit" class="form-button">Save</button>
-  <a href="/">Back</a>
+  <div>
+    <button type="submit" class="form-button">Save</button>
+    <a href="/" class="back-button">Back</a>
+  </div>
+
 </form>
