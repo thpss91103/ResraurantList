@@ -1,15 +1,7 @@
-const mongoose = require('mongoose')
 const restaurantList = require('../../restaurant.json')
 const Restaurant = require('../restaurant')
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+const db = require('../../config/mongoose')
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('mongodb error!')
-})
 db.once('open', () => {
   const len = restaurantList.results.length
   const restaurant = restaurantList.results
@@ -18,7 +10,7 @@ db.once('open', () => {
     Restaurant.create({ 
       name: restaurant[i].name, 
       location: restaurant[i].location,
-      googleMap : restaurant[i].google_map,
+      google_map : restaurant[i].google_map,
       phone: restaurant[i].phone,
       rating: restaurant[i].rating,
       description: restaurant[i].description,
