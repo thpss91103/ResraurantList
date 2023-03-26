@@ -1,11 +1,11 @@
 # 我的餐廳清單
 ### 介紹
-可以瀏覽自己收藏的餐廳、搜尋餐廳及餐廳詳細資料
+可以瀏覽新增自己收藏的餐廳、搜尋餐廳及餐廳詳細資料
 ![Restaurant](https://github.com/thpss91103/ResraurantList/blob/main/public/image/indexImg.png)
 ### 功能
 1. 首頁可以看到自己收藏的餐廳
 2. 右上角Create可以新增想收藏的餐廳
-3. 搜尋欄可以用關鍵字搜尋餐廳
+3. 搜尋欄可以用關鍵字搜尋餐廳及排序
 4. 點擊Detail可以看詳細資料
 5. 點擊Edit可以編輯餐廳資料
 6. 點擊Delete可以刪除餐廳
@@ -41,3 +41,4 @@ ctrl + c
 - MongoDB
 - Mongoose 5.9.7
 - Dotenv 16.0.3
+- Method-override 3.0.0
