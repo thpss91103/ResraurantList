@@ -9,21 +9,21 @@
 <form action="/restaurants" method="POST">
   <div class="new-form">
     <label>Name :</label>
-    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Name" name="name" required>
     <label>Adress :</label>
-    <input type="text" placeholder="Location" name="location">
+    <input type="text" placeholder="Location" name="location" required>
     <label>Google Map :</label>
-    <input type="text" placeholder="GoogleMap URL" name="google_map">
+    <input type="text" placeholder="GoogleMap URL" name="google_map" required>
     <label>Phone Number:</label>
-    <input type="text" placeholder="02-XXXXXXX" name="phone">
+    <input type="text" placeholder="02-XXXXXXX" name="phone" required required>
     <label>Score Rating :</label>
-    <input type="number" placeholder="4.X" name="rating" max="5" step="0.1">
+    <input type="number" placeholder="4.X" name="rating" max="5" step="0.1" required>
     <label>Description :</label>
     <textarea name="description" id="description" cols="30" rows="10">This restaurant...</textarea>
     <label>Image URL:</label>
-    <input type="text" placeholder="http://..." name="image">
+    <input type="text" placeholder="http://..." name="image" required>
     <label>Food Category :</label>
-    <input type="text" placeholder="Chinese/Japanese..." name="category">
+    <input type="text" placeholder="Chinese/Japanese..." name="category" required>
     
   </div>
   <button type="submit" class="form-button">Create</button>

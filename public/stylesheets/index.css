@@ -178,3 +178,12 @@ form {
   color: rgb(37, 61, 216);
   background-color: #71baea;
 }
+
+.search-box {
+  width: 70%;
+  display: flex;
+}
+
+.select-box {
+  width: 28%;
+}
