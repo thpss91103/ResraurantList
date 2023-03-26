@@ -6,6 +6,7 @@ const { Error } = require('mongoose')
 const mongoose = require('mongoose')
 const Restaurant = require('./models/restaurant')
 const restaurantList = require("./restaurant.json")
+const methodOverride = require('method-override')
 const app = express()
 const port = 3000
 
@@ -29,6 +30,7 @@ app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs'}))
 app.set('view engine', 'hbs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true}))
+app.use(methodOverride('_method'))
 
 
 app.get('/', (req, res) => {
@@ -43,14 +45,8 @@ app.get('/restaurants/new', (req, res) => {
 })
 
 app.post('/restaurants', (req, res) => {
-  const name = req.body.name
-  const location = req.body.location
-  const phone = req.body.phone
-  const rating = req.body.rating
-  const description = req.body.description
-  const image = req.body.image
-  const category = req.body.category
-  return Restaurant.create({ name, location, phone, rating, description, image, category })
+  const { name, location, google_map, phone, rating, description, image, category} = req.body
+  return Restaurant.create({ name, location, google_map, phone, rating, description, image, category })
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
@@ -71,21 +67,14 @@ app.get('/restaurant/:id/edit', (req, res) => {
     .catch(error => console.log(error))  
 })
 
-app.post('/restaurant/:id/edit', (req, res) => {
+app.put('/restaurant/:id', (req, res) => {
   const id = req.params.id
-  const name = req.body.name
-  const location = req.body.location
-  const googleMap = req.body.google_map
-  const phone = req.body.phone
-  const rating = req.body.rating
-  const description = req.body.description
-  const image = req.body.image
-  const category = req.body.category
+  const { name, location, google_map, phone, rating, description, image, category} = req.body
   return Restaurant.findById(id)
     .then(restaurant => {
       restaurant.name = name
       restaurant.location = location
-      restaurant.googleMap = googleMap
+      restaurant.google_map = google_map
       restaurant.phone = phone
       restaurant.rating = rating
       restaurant.description = description
@@ -97,7 +86,7 @@ app.post('/restaurant/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.get('/restaurant/:id/delete', (req, res) => {
+app.delete('/restaurant/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
     .then((restaurant) => restaurant.remove())

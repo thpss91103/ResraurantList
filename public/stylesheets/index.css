@@ -150,10 +150,12 @@ form {
 }
 
 .function-btn {
+  display: flex;
   float: right;
 }
 
 .function-btn a{
+  margin-right: 2px;
   padding: 0 10px 0;
   border-radius: 3px;
   color: white;
@@ -161,6 +163,18 @@ form {
 }
 
 .function-btn a:hover {
+  color: rgb(37, 61, 216);
+  background-color: #71baea;
+}
+
+.delete-btn {
+  padding: 0 10px 0;
+  border-radius: 3px;
+  color: white;
+  background-color: #226089;
+}
+
+.delete-btn:hover {
   color: rgb(37, 61, 216);
   background-color: #71baea;
 }
