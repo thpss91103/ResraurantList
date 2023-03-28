@@ -9,21 +9,21 @@
 <form action="/restaurants/{{ restaurant._id }}?_method=PUT" method="POST">
   <div class="new-form">
     <label>Name :</label>
-    <input type="text" placeholder="Name" name="name" value="{{ restaurant.name }}">
+    <input type="text" placeholder="Name" name="name" value="{{ restaurant.name }}" required>
     <label>Adress :</label>
-    <input type="text" placeholder="Location" name="location" value="{{ restaurant.location }}">
+    <input type="text" placeholder="Location" name="location" value="{{ restaurant.location }}" required>
     <label>Google Map :</label>
-    <input type="text" placeholder="GoogleMap URL" name="google_map" value="{{ restaurant.google_map }}">
+    <input type="text" placeholder="GoogleMap URL" name="google_map" value="{{ restaurant.google_map }}" required>
     <label>Phone Number:</label>
-    <input type="text" placeholder="02-XXXXXXX" name="phone" value="{{ restaurant.phone }}">
+    <input type="text" placeholder="02-XXXXXXX" name="phone" value="{{ restaurant.phone }}" required>
     <label>Score Rating :</label>
-    <input type="number" placeholder="4.X" name="rating" max="5" step="0.1" value="{{ restaurant.rating }}">
+    <input type="number" placeholder="4.X" name="rating" max="5" step="0.1" value="{{ restaurant.rating }}" required>
     <label>Description :</label>
     <textarea name="description" id="description" cols="30" rows="10">{{ restaurant.description }}</textarea>
     <label>Image URL:</label>
-    <input type="text" placeholder="http://..." name="image" value="{{ restaurant.image }}">
+    <input type="text" placeholder="http://..." name="image" value="{{ restaurant.image }}" required>
     <label>Food Category :</label>
-    <input type="text" placeholder="Chinese/Japanese..." name="category" value="{{ restaurant.category }}">
+    <input type="text" placeholder="Chinese/Japanese..." name="category" value="{{ restaurant.category }}" required>
 
   </div>
   <div>
