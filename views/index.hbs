@@ -14,7 +14,7 @@
           </div>
           <div class="select-box ml-2">
             <select class="form-select" id="sort" name="sort" aria-label="select example">
-              <option {{#if sortMethod}}{{else}}selected{{/if}} disabled>Sort</option>
+              <option selected>{{#if sortMethod}}{{sortMethod}}{{else}}Sort{{/if}}</option>
               <option>A > Z</option>
               <option>Z > A</option>
               <option>類別</option>
