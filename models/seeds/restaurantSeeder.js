@@ -4,6 +4,10 @@ const db = require('../../config/mongoose')
 const User = require('../../models/user')
 const bcrypt = require('bcryptjs')
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const seedUser = {
   user1: {
     name: 'user1',
@@ -21,13 +25,13 @@ db.once('open', () => {
   const restaurant = restaurantList.results
   console.log('mongodb connected!')
   
-  for (let key in seedUser) {
+  for (let i in seedUser) {
     bcrypt
       .genSalt(10)
       .then(salt => bcrypt.hash(seedUser[key].password, salt))
       .then(hash => User.create({
-        name: seedUser[key].name,
-        email: seedUser[key].email,
+        name: seedUser[i].name,
+        email: seedUser[i].email,
         password: hash
       }))
       .then(user => {
