@@ -7,6 +7,7 @@ const methodOverride = require('method-override')
 const routes = require('./routes')
 
 const session = require('express-session')
+const usePassport = require('./config/passport')
 
 const app = express()
 const port = 3000
@@ -24,6 +25,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
+usePassport(app)
 app.use(routes)
 
 app.listen(port, () => {
