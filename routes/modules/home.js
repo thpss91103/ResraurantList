@@ -3,7 +3,8 @@ const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
-  Restaurant.find()
+  const userId = req.user._id
+  Restaurant.find({ userId })
     .lean()
     .then(restaurants => res.render('index', { restaurants }))
     .catch(error => console.log(error))
@@ -19,6 +20,7 @@ router.get('/search', (req, res) => {
   const keyword = req.query.keyword.trim().toLowerCase()
   const sortMethod = req.query.sort
   let sortKeyword = {name: 'asc'}
+  const userId = req.user._id
 
   if (sortMethod === 'Z > A')
     sortKeyword = {name: 'desc'}
@@ -29,7 +31,7 @@ router.get('/search', (req, res) => {
   if(sortMethod === '地區')
     sortKeyword = {location: 'asc'}
     
-  return Restaurant.find({})
+  return Restaurant.find({ userId })
     .lean()
     .sort(sortKeyword)
     .then(restaurant => {
