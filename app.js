@@ -6,6 +6,8 @@ const restaurantList = require("./restaurant.json")
 const methodOverride = require('method-override')
 const routes = require('./routes')
 
+const session = require('express-session')
+
 const app = express()
 const port = 3000
 
@@ -16,6 +18,11 @@ app.set('view engine', 'hbs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(methodOverride('_method'))
+app.use(session({
+  secret: 'ThisIsMySecret',
+  resave: false,
+  saveUninitialized: true
+}))
 
 app.use(routes)
 
