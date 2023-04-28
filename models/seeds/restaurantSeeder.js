@@ -28,7 +28,7 @@ db.once('open', () => {
   for (let i in seedUser) {
     bcrypt
       .genSalt(10)
-      .then(salt => bcrypt.hash(seedUser[key].password, salt))
+      .then(salt => bcrypt.hash(seedUser[i].password, salt))
       .then(hash => User.create({
         name: seedUser[i].name,
         email: seedUser[i].email,
