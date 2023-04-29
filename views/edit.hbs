@@ -13,7 +13,7 @@
     <label>Adress :</label>
     <input type="text" placeholder="Location" name="location" value="{{ restaurant.location }}" required>
     <label>Google Map :</label>
-    <input type="text" placeholder="GoogleMap URL" name="google_map" value="{{ restaurant.google_map }}" required>
+    <input type="text" placeholder="GoogleMap URL" name="google_map" value="{{ restaurant.google_map }}" pattern="^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$" required>
     <label>Phone Number:</label>
     <input type="text" placeholder="02-XXXXXXX" name="phone" value="{{ restaurant.phone }}" required>
     <label>Score Rating :</label>
@@ -21,7 +21,7 @@
     <label>Description :</label>
     <textarea name="description" id="description" cols="30" rows="10">{{ restaurant.description }}</textarea>
     <label>Image URL:</label>
-    <input type="text" placeholder="http://..." name="image" value="{{ restaurant.image }}" required>
+    <input type="text" placeholder="http://..." name="image" value="{{ restaurant.image }}" pattern="^https?:\/\/.+\.(jpe?g|png|gif)$" required>
     <label>Food Category :</label>
     <input type="text" placeholder="Chinese/Japanese..." name="category" value="{{ restaurant.category }}" required>
 
